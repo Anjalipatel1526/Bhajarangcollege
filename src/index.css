@@ -8,7 +8,6 @@
    Accent: Soft Orange
    All colors in HSL format
 */
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -20,24 +19,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 215 28% 17%;
 
-    /* Navy Blue - Primary */
-    --primary: 213 56% 24%;
+    /* Royal Blue - Primary #1A237E */
+    --primary: 235 66% 30%;
     --primary-foreground: 0 0% 100%;
 
-    /* Light Grey - Secondary */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 215 28% 17%;
+    /* Teal Green - Secondary #00897B */
+    --secondary: 174 100% 27%;
+    --secondary-foreground: 0 0% 100%;
 
     /* Muted Grey */
     --muted: 210 20% 96%;
     --muted-foreground: 215 16% 47%;
 
-    /* Soft Orange - Accent */
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 100%;
+    /* Soft Gold - Accent #FFC107 */
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 0%;
 
     /* Royal Blue - for highlights */
-    --highlight: 217 91% 60%;
+    --highlight: 235 66% 40%;
     --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -45,7 +44,7 @@
 
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 213 56% 24%;
+    --ring: 235 66% 30%;
 
     --radius: 0.5rem;
 
@@ -64,28 +63,30 @@
   }
 
   .dark {
-    --background: 215 28% 10%;
+    --background: 235 50% 10%;
+    /* Darker version of primary? or standard dark */
     --foreground: 210 40% 98%;
 
-    --card: 215 28% 12%;
+    --card: 235 50% 12%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 215 28% 12%;
+    --popover: 235 50% 12%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 217 91% 60%;
+    --primary: 235 66% 40%;
+    /* Slightly lighter for dark mode visibility */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 28% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 174 100% 27%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 215 28% 17%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 25 95% 53%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 0%;
 
-    --highlight: 217 91% 60%;
+    --highlight: 235 66% 40%;
     --highlight-foreground: 0 0% 100%;
 
     --destructive: 0 63% 31%;
@@ -93,7 +94,7 @@
 
     --border: 215 28% 20%;
     --input: 215 28% 20%;
-    --ring: 217 91% 60%;
+    --ring: 235 66% 40%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;

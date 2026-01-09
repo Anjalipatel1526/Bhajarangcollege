@@ -27,7 +27,7 @@ const HeroSection = () => {
 
           {/* Subheading */}
           <p className="mb-10 max-w-2xl text-lg text-primary-foreground/80 md:text-xl">
-            Join Bajrang Engineering College - Where innovation meets excellence. 
+            Join Bhajarang Engineering College - Where innovation meets excellence.
             Discover world-class education, industry partnerships, and a pathway to success.
           </p>
 

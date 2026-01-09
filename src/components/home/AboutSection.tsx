@@ -19,7 +19,7 @@ const AboutSection = () => {
             <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-secondary">
               <img
                 src="https://images.unsplash.com/photo-1562774053-701939374585?w=800&auto=format&fit=crop"
-                alt="Bajrang Engineering College Campus"
+                alt="Bhajarang Engineering College Campus"
                 className="h-full w-full object-cover"
               />
             </div>
@@ -39,14 +39,14 @@ const AboutSection = () => {
               Building Future Leaders in Engineering
             </h2>
             <p className="mb-6 text-lg text-muted-foreground">
-              Established in 1995, Bajrang Engineering College has been at the forefront 
-              of technical education in India. We combine rigorous academics with practical 
+              Established in 1995, Bhajarang Engineering College has been at the forefront
+              of technical education in India. We combine rigorous academics with practical
               learning to produce industry-ready graduates.
             </p>
             <p className="mb-8 text-muted-foreground">
-              Our state-of-the-art campus, experienced faculty, and strong industry 
-              connections create an environment where students thrive. We believe in 
-              nurturing not just engineers, but innovative thinkers and problem solvers 
+              Our state-of-the-art campus, experienced faculty, and strong industry
+              connections create an environment where students thrive. We believe in
+              nurturing not just engineers, but innovative thinkers and problem solvers
               who will shape the future.
             </p>
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, GraduationCap, ChevronDown } from "lucide-react";
+import { Menu, X, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -15,11 +15,8 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "About Us", path: "/about" },
-  { name: "Vision & Mission", path: "/vision-mission" },
   { name: "Courses", path: "/courses" },
-  { name: "Admissions", path: "/admissions" },
-  { name: "Faculty", path: "/faculty" },
-  { name: "Campus Life", path: "/campus-life" },
+  { name: "Admission", path: "/admissions" },
   { name: "Placements", path: "/placements" },
   { name: "News & Events", path: "/news-events" },
   { name: "Gallery", path: "/gallery" },
@@ -31,47 +28,52 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      {/* Top Bar */}
-      <div className="hidden bg-primary py-2 text-primary-foreground md:block">
-        <div className="container-custom flex items-center justify-between text-sm">
-          <div className="flex items-center gap-6">
-            <span>📧 info@bajrangcollege.edu.in</span>
-            <span>📞 +91-1234-567890</span>
-          </div>
-          <div className="flex items-center gap-4">
-            <Link to="/admissions" className="hover:text-accent transition-colors">
-              Admissions Open 2025-26
-            </Link>
-          </div>
-        </div>
-      </div>
-
+    <header className="sticky top-0 z-50 w-full border-b border-primary-foreground/10 bg-primary shadow-lg backdrop-blur supports-[backdrop-filter]:bg-primary/95">
       {/* Main Navigation */}
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary lg:h-12 lg:w-12">
-              <GraduationCap className="h-6 w-6 text-primary-foreground lg:h-7 lg:w-7" />
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="flex bg-white rounded-full items-center justify-center h-10 w-10 lg:h-14 lg:w-14 overflow-hidden">
+              <img src="/logo.png" alt="Bhajarang Engineering College" className="h-full w-full object-cover" />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold text-primary lg:text-xl">Bajrang</span>
-              <span className="text-xs text-muted-foreground lg:text-sm">Engineering College</span>
+              <span className="text-lg font-bold text-white lg:text-xl tracking-tight">Bhajarang</span>
+              <span className="text-xs text-primary-foreground/80 lg:text-sm">Engineering College</span>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden items-center gap-1 lg:flex">
-            {navItems.slice(0, 6).map((item) => (
+          <nav className="hidden items-center gap-1 xl:flex">
+            {navItems.map((item) => (
               <Link
                 key={item.path}
                 to={item.path}
                 className={cn(
-                  "px-3 py-2 text-sm font-medium transition-colors hover:text-primary",
+                  "px-3 py-2 text-sm font-medium transition-all duration-200 hover:text-accent relative",
                   location.pathname === item.path
-                    ? "text-primary"
-                    : "text-muted-foreground"
+                    ? "text-accent"
+                    : "text-primary-foreground/90"
+                )}
+              >
+                {item.name}
+                {location.pathname === item.path && (
+                  <span className="absolute bottom-0 left-0 h-0.5 w-full bg-accent rounded-full mb-1" />
+                )}
+              </Link>
+            ))}
+          </nav>
+          {/* Tablet/Smaller Desktop Navigation (Hidden on XL, Visible on LG - using Dropdown for overflow if needed) */}
+          <nav className="hidden items-center gap-1 lg:flex xl:hidden">
+            {navItems.slice(0, 5).map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={cn(
+                  "px-2 py-2 text-sm font-medium transition-colors hover:text-accent",
+                  location.pathname === item.path
+                    ? "text-accent"
+                    : "text-primary-foreground/90"
                 )}
               >
                 {item.name}
@@ -80,20 +82,20 @@ const Header = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium text-muted-foreground">
+                  <NavigationMenuTrigger className="bg-transparent text-primary-foreground hover:bg-white/10 hover:text-accent focus:bg-white/10 focus:text-accent data-[active]:bg-white/10 data-[state=open]:bg-white/10">
                     More
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-48 gap-1 p-2">
-                      {navItems.slice(6).map((item) => (
+                    <ul className="grid w-48 gap-1 p-2 bg-white rounded-md shadow-xl">
+                      {navItems.slice(5).map((item) => (
                         <li key={item.path}>
                           <NavigationMenuLink asChild>
                             <Link
                               to={item.path}
                               className={cn(
-                                "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-secondary",
+                                "block rounded-md px-3 py-2 text-sm transition-colors hover:bg-secondary/10 hover:text-primary",
                                 location.pathname === item.path
-                                  ? "text-primary"
+                                  ? "text-primary font-bold"
                                   : "text-muted-foreground"
                               )}
                             >
@@ -109,30 +111,31 @@ const Header = () => {
             </NavigationMenu>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden lg:flex">
-            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
+
+          {/* CTA Button (Hidden on small screens) */}
+          <div className="hidden lg:flex ml-4">
+            <Button asChild className="bg-accent text-primary hover:bg-accent/90 font-semibold shadow-md border-2 border-accent hover:border-white transition-all">
               <Link to="/admissions">Apply Now</Link>
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden"
+            className="lg:hidden p-2 rounded-md hover:bg-white/10 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
-              <X className="h-6 w-6 text-foreground" />
+              <X className="h-6 w-6 text-white" />
             ) : (
-              <Menu className="h-6 w-6 text-foreground" />
+              <Menu className="h-6 w-6 text-white" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="border-t py-4 lg:hidden">
+          <div className="border-t border-primary-foreground/10 py-4 lg:hidden animate-in slide-in-from-top-2">
             <nav className="flex flex-col gap-2">
               {navItems.map((item) => (
                 <Link
@@ -140,16 +143,16 @@ const Header = () => {
                   to={item.path}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    "rounded-md px-4 py-2 text-sm font-medium transition-colors",
+                    "rounded-md px-4 py-3 text-sm font-medium transition-colors",
                     location.pathname === item.path
-                      ? "bg-primary text-primary-foreground"
-                      : "text-muted-foreground hover:bg-secondary"
+                      ? "bg-accent text-primary font-bold"
+                      : "text-primary-foreground hover:bg-white/10 hover:text-accent"
                   )}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button asChild className="mt-2 bg-accent text-accent-foreground hover:bg-accent/90">
+              <Button asChild className="mt-4 w-full bg-accent text-primary hover:bg-accent/90 font-bold">
                 <Link to="/admissions" onClick={() => setMobileMenuOpen(false)}>
                   Apply Now
                 </Link>

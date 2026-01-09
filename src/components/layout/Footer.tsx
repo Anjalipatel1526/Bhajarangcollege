@@ -6,7 +6,6 @@ const Footer = () => {
     { name: "About Us", path: "/about" },
     { name: "Courses", path: "/courses" },
     { name: "Admissions", path: "/admissions" },
-    { name: "Faculty", path: "/faculty" },
     { name: "Placements", path: "/placements" },
     { name: "Contact Us", path: "/contact" },
   ];
@@ -35,16 +34,16 @@ const Footer = () => {
           {/* College Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-foreground">
-                <GraduationCap className="h-6 w-6 text-primary" />
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white overflow-hidden p-0.5">
+                <img src="/logo.png" alt="Bhajarang Engineering College" className="h-full w-full object-contain" />
               </div>
               <div className="flex flex-col">
-                <span className="text-lg font-bold">Bajrang</span>
+                <span className="text-lg font-bold">Bhajarang</span>
                 <span className="text-xs opacity-80">Engineering College</span>
               </div>
             </div>
             <p className="text-sm leading-relaxed opacity-80">
-              Empowering future engineers with quality education, innovative research, 
+              Empowering future engineers with quality education, innovative research,
               and industry-ready skills since 1995.
             </p>
             <div className="flex gap-3">
@@ -102,7 +101,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 opacity-80" />
                 <span className="text-sm opacity-80">
-                  Bajrang Nagar, NH-48, Near Industrial Area,
+                  Bhajarang Nagar, NH-48, Near Industrial Area,
                   <br />
                   Rajasthan - 302001, India
                 </span>
@@ -115,8 +114,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-4 w-4 shrink-0 opacity-80" />
-                <a href="mailto:info@bajrangcollege.edu.in" className="text-sm opacity-80 hover:opacity-100">
-                  info@bajrangcollege.edu.in
+                <a href="mailto:info@bhajarangcollege.edu.in" className="text-sm opacity-80 hover:opacity-100">
+                  info@bhajarangcollege.edu.in
                 </a>
               </li>
             </ul>
@@ -128,7 +127,7 @@ const Footer = () => {
       <div className="border-t border-primary-foreground/10">
         <div className="container-custom flex flex-col items-center justify-between gap-4 py-4 text-sm md:flex-row">
           <p className="opacity-80">
-            © {new Date().getFullYear()} Bajrang Engineering College. All rights reserved.
+            © {new Date().getFullYear()} Bhajarang Engineering College. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link to="/privacy" className="opacity-80 transition-opacity hover:opacity-100">

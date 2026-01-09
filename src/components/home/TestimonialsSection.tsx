@@ -10,7 +10,7 @@ const testimonials = [
     batch: "CSE 2020",
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop",
     quote:
-      "Bajrang Engineering College provided me with the perfect foundation for my career. The faculty's guidance and practical exposure helped me secure my dream job at Google.",
+      "Bhajarang Engineering College provided me with the perfect foundation for my career. The faculty's guidance and practical exposure helped me secure my dream job at Google.",
   },
   {
     id: 2,
@@ -120,11 +120,10 @@ const TestimonialsSection = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2 w-2 rounded-full transition-all ${
-                  index === currentIndex
+                className={`h-2 w-2 rounded-full transition-all ${index === currentIndex
                     ? "w-6 bg-accent"
                     : "bg-primary-foreground/30"
-                }`}
+                  }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />
             ))}

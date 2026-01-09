@@ -45,9 +45,9 @@ const Contact = () => {
 
             <div className="space-y-6">
               {[
-                { icon: MapPin, title: "Address", content: "Bajrang Nagar, NH-48, Near Industrial Area, Rajasthan - 302001, India" },
+                { icon: MapPin, title: "Address", content: "Bhajarang Nagar, NH-48, Near Industrial Area, Rajasthan - 302001, India" },
                 { icon: Phone, title: "Phone", content: "+91-1234-567890, +91-1234-567891" },
-                { icon: Mail, title: "Email", content: "info@bajrangcollege.edu.in" },
+                { icon: Mail, title: "Email", content: "info@bhajarangcollege.edu.in" },
                 { icon: Clock, title: "Office Hours", content: "Mon-Sat: 9:00 AM - 5:00 PM" },
               ].map((item) => (
                 <div key={item.title} className="flex gap-4 rounded-xl bg-secondary p-4">
