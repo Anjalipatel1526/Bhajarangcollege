@@ -20,7 +20,6 @@ const navItems = [
   { name: "Placements", path: "/placements" },
   { name: "News & Events", path: "/news-events" },
   { name: "Gallery", path: "/gallery" },
-  { name: "Contact", path: "/contact" },
 ];
 
 const Header = () => {

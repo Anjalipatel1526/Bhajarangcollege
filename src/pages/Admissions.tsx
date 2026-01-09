@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CheckCircle, FileText, Calendar, CreditCard } from "lucide-react";
+
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -12,38 +12,54 @@ const Admissions = () => {
   const { toast } = useToast();
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", course: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({ title: "Application Submitted!", description: "We'll contact you soon." });
-    setFormData({ name: "", email: "", phone: "", course: "" });
-  };
+  const [isLoading, setIsLoading] = useState(false);
 
-  const steps = [
-    { icon: FileText, title: "Online Application", desc: "Fill out the form below" },
-    { icon: Calendar, title: "Entrance Exam", desc: "JEE Main / State CET" },
-    { icon: CheckCircle, title: "Counseling", desc: "Document verification" },
-    { icon: CreditCard, title: "Fee Payment", desc: "Confirm your seat" },
-  ];
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const response = await fetch('http://localhost:5000/api/admissions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Application Submitted!",
+          description: "We'll contact you soon. Your application has been saved.",
+          duration: 5000,
+        });
+        setFormData({ name: "", email: "", phone: "", course: "" });
+      } else {
+        throw new Error('Failed to submit');
+      }
+    } catch (error) {
+      toast({
+        title: "Submission Failed",
+        description: "There was an error submitting your application. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <Layout>
       <section className="bg-primary py-20 text-primary-foreground">
         <div className="container-custom text-center">
-          <h1 className="heading-primary text-primary-foreground">Admissions 2025-26</h1>
-          <p className="mt-4 text-lg opacity-80">Start your engineering journey with us</p>
+          <h1 className="heading-primary text-primary-foreground">Admissions 2026-27</h1>
+          <p className="mt-4 text-lg opacity-80">Start your journey with us</p>
         </div>
       </section>
 
       <section className="section-padding">
         <div className="container-custom">
-          <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((s, i) => (
-              <div key={s.title} className="flex items-center gap-4 rounded-xl bg-secondary p-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold">{i + 1}</div>
-                <div><h3 className="font-semibold">{s.title}</h3><p className="text-sm text-muted-foreground">{s.desc}</p></div>
-              </div>
-            ))}
-          </div>
+
 
           <div className="grid gap-8 lg:grid-cols-2">
             <Card>
@@ -62,17 +78,21 @@ const Admissions = () => {
                         <SelectItem value="ce">Civil</SelectItem>
                         <SelectItem value="ee">Electrical</SelectItem>
                         <SelectItem value="ece">Electronics</SelectItem>
+                        <SelectItem value="it">Information technology</SelectItem>
+                        <SelectItem value="ai & ds">Artificial Intelligence & Data Science</SelectItem>
+                        <SelectItem value="mba">Master of Business Administration</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
-                  <Button type="submit" className="w-full">Submit Application</Button>
+                  <Button type="submit" className="w-full" disabled={isLoading}>
+                    {isLoading ? "Submitting..." : "Submit Application"}
+                  </Button>
                 </form>
               </CardContent>
             </Card>
 
             <div className="space-y-6">
-              <Card><CardHeader><CardTitle>Eligibility</CardTitle></CardHeader><CardContent className="text-muted-foreground">10+2 with Physics, Chemistry, and Mathematics with minimum 45% marks. Valid JEE Main / State CET score.</CardContent></Card>
-              <Card><CardHeader><CardTitle>Important Dates</CardTitle></CardHeader><CardContent className="space-y-2 text-sm text-muted-foreground"><p>📅 Application Deadline: March 31, 2025</p><p>📅 Counseling Begins: June 15, 2025</p><p>📅 Classes Start: August 1, 2025</p></CardContent></Card>
+              <Card><CardHeader><CardTitle>Eligibility</CardTitle></CardHeader><CardContent className="text-muted-foreground">10+2 with Physics, Chemistry, and Mathematics with minimum 75% marks</CardContent></Card>
             </div>
           </div>
         </div>

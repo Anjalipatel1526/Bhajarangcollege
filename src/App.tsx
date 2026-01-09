@@ -11,10 +11,9 @@ import CampusLife from "./pages/CampusLife";
 import Placements from "./pages/Placements";
 import NewsEvents from "./pages/NewsEvents";
 import Gallery from "./pages/Gallery";
-import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import ClickSpark from "./components/ui/ClickSpark";
-import GradualBlur from "./components/ui/GradualBlur";
+
 
 const queryClient = new QueryClient();
 
@@ -42,21 +41,11 @@ const App = () => (
                 <Route path="/placements" element={<Placements />} />
                 <Route path="/news-events" element={<NewsEvents />} />
                 <Route path="/gallery" element={<Gallery />} />
-                <Route path="/contact" element={<Contact />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </div>
           </ClickSpark>
-          <GradualBlur
-            target="parent"
-            position="bottom"
-            height="6rem"
-            strength={2}
-            divCount={5}
-            curve="bezier"
-            exponential={true}
-            opacity={1}
-          />
+
         </div>
       </BrowserRouter>
     </TooltipProvider>

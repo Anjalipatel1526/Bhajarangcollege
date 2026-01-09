@@ -8,7 +8,6 @@ import PlacementsSection from "@/components/home/PlacementsSection";
 
 import AlumniSection from "@/components/home/AlumniSection";
 import AnnouncementsSection from "@/components/home/AnnouncementsSection";
-import CTASection from "@/components/home/CTASection";
 
 const Index = () => {
   return (
@@ -22,7 +21,6 @@ const Index = () => {
       <AlumniSection />
 
       <AnnouncementsSection />
-      <CTASection />
     </Layout>
   );
 };

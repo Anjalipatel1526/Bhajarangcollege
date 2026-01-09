@@ -15,7 +15,7 @@ const Placements = () => (
     <section className="bg-primary py-20 text-primary-foreground">
       <div className="container-custom text-center">
         <h1 className="heading-primary text-primary-foreground">Placements</h1>
-        <p className="mt-4 text-lg opacity-80">Exceptional career opportunities</p>
+        <p className="mt-4 text-lg opacity-80">Exceptional career opportunities for our campus Students</p>
       </div>
     </section>
 
@@ -26,7 +26,7 @@ const Placements = () => (
             <div key={s.label} className="rounded-xl bg-secondary p-6 text-center">
               <s.icon className="mx-auto mb-2 h-8 w-8 text-accent" />
               <div className="text-3xl font-bold text-primary">{s.value}</div>
-              <div className="text-sm text-muted-foreground">{s.label}</div>
+              <div className="text-sm text-white">{s.label}</div>
             </div>
           ))}
         </div>
@@ -34,7 +34,7 @@ const Placements = () => (
         <h2 className="heading-secondary mb-8 text-center">Our Recruiters</h2>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:grid-cols-8">
           {companies.map((c) => (
-            <div key={c} className="flex h-16 items-center justify-center rounded-lg bg-secondary text-sm font-medium text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors">{c}</div>
+            <div key={c} className="flex h-16 items-center justify-center rounded-lg bg-secondary text-sm font-medium text-white hover:bg-primary hover:text-primary-foreground transition-colors">{c}</div>
           ))}
         </div>
       </div>

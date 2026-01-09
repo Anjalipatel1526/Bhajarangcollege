@@ -17,8 +17,7 @@ const Courses = () => (
   <Layout>
     <section className="bg-primary py-20 text-primary-foreground">
       <div className="container-custom text-center">
-        <h1 className="heading-primary text-primary-foreground">Courses & Departments</h1>
-        <p className="mt-4 text-lg opacity-80">B.Tech Programs - 4 Year Undergraduate Degrees</p>
+        <h5 className="heading-primary text-primary-foreground">Engineering & Management Programs</h5>
       </div>
     </section>
 
@@ -34,8 +33,7 @@ const Courses = () => (
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="mb-4 text-sm text-muted-foreground">{p.description}</p>
-                <div className="flex gap-4 text-sm"><span>🎓 4 Years</span><span>👥 {p.seats} Seats</span></div>
+                <p className="mb-4 text-sm text-foreground">{p.description}</p>
               </CardContent>
             </Card>
           ))}
