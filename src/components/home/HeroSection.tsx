@@ -20,7 +20,7 @@ const HeroSection = () => {
         {/* Main Heading */}
         <h6 className="mb-6 max-w-4xl text-4xl font-bold leading-tight text-primary-foreground md:text-5xl lg:text-6xl xl:text-7xl">
           Best among the best
-          <span className="block text-2xl md:text-3xl lg:text-4xl text-accent mt-2 whitespace-nowrap">Building Engineers for a Global Tomorrow</span>
+          <span className="block text-2xl md:text-3xl lg:text-4xl text-accent mt-2">Building Engineers for a Global Tomorrow</span>
         </h6>
 
         {/* Subheading */}
