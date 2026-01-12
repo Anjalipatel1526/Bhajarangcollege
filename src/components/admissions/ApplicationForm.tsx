@@ -30,6 +30,9 @@ const ApplicationForm = ({ onSuccess }: { onSuccess?: () => void }) => {
     return (
         <section className="max-w-5xl mx-auto p-4 md:p-6 font-sans">
             <div className="text-center mb-10">
+                <p className="mb-4 text-lg font-bold text-secondary">
+                    For Enquiry: +91 94446 26262
+                </p>
                 <h2 className="text-3xl font-bold text-primary mb-3">Online Admission Application</h2>
                 <p className="text-muted-foreground text-lg">
                     Apply to Bhajarang Engineering College and begin your journey toward academic excellence.
