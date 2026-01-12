@@ -48,7 +48,7 @@ const AboutSection = () => {
             <ul className="mb-8 space-y-3">
               {highlights.map((item) => (
                 <li key={item} className="flex items-center gap-3">
-                  <CheckCircle className="h-5 w-5 shrink-0 text-accent" />
+                  <CheckCircle className="h-5 w-5 shrink-0 text-secondary" />
                   <span className="text-foreground">{item}</span>
                 </li>
               ))}
