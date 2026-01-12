@@ -27,7 +27,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-primary-foreground/10 bg-primary shadow-lg backdrop-blur supports-[backdrop-filter]:bg-primary/95">
+    <header className="absolute top-0 z-50 w-full bg-transparent border-none shadow-none">
       {/* Main Navigation */}
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between lg:h-20">
