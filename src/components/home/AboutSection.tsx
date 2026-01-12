@@ -29,7 +29,7 @@ const AboutSection = () => {
 
           {/* Content Side */}
           <div>
-            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-accent">
+            <span className="mb-4 inline-block text-sm font-semibold uppercase tracking-wider text-[#000000]">
               About Us
             </span>
             <h4 className="mb-6 text-xl font-bold whitespace-nowrap text-foreground">
