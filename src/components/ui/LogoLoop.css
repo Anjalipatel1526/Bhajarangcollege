@@ -37,7 +37,11 @@
 
 .logo-loop-slide img {
     height: 60px;
-    margin: 0 40px;
+    margin: 0 60px;
+    /* Increased margin to prevent visual crowding */
+    max-width: 160px;
+    /* Ensure logos don't get too wide */
+    object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.7;
     transition: all 0.3s ease;
