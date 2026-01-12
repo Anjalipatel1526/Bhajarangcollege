@@ -65,13 +65,8 @@ const PlacementsSection = () => {
                   logos={companies.map(company => ({
                     src: company.logo,
                     alt: company.name,
-                    title: company.name
+                    name: company.name
                   }))}
-                  direction="left"
-                  speed={80}
-                  logoHeight={64}
-                  gap={48}
-                  pauseOnHover
                 />
               </div>
 

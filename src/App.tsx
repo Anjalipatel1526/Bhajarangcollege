@@ -31,7 +31,7 @@ const AppContent = () => {
   }, [location.pathname]);
 
   return (
-    <div style={{ position: 'relative', height: '100vh', overflow: 'hidden' }}>
+    <div style={{ position: 'relative', height: '100dvh', overflow: 'hidden' }}>
       <ClickSpark
         sparkColor='#fff'
         sparkSize={10}

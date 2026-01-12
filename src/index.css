@@ -113,11 +113,17 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased overflow-x-hidden;
+    @apply bg-background text-foreground antialiased;
+    height: 100%;
+    overflow: hidden;
+    /* App.tsx handles scrolling */
   }
 
   html {
     scroll-behavior: smooth;
+    height: 100%;
+    overflow: hidden;
+    /* App.tsx handles scrolling */
   }
 }
 
