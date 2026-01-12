@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, TrendingUp, Users, Building } from "lucide-react";
+import LogoLoop from "@/components/ui/LogoLoop";
 
 const stats = [
   { value: "₹15 LPA", label: "Highest Package", icon: TrendingUp },
@@ -59,25 +60,19 @@ const PlacementsSection = () => {
               <h3 className="mb-8 text-center text-2xl font-semibold text-foreground">
                 Our Recruiting Partners
               </h3>
-              <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5">
-                {companies.slice(0, 5).map((company) => (
-                  <div
-                    key={company.name}
-                    className="group flex h-32 items-center justify-center rounded-xl p-4 transition-all hover:-translate-y-1 relative overflow-hidden"
-                  >
-                    <img
-                      src={company.logo}
-                      alt={company.name}
-                      className="max-h-20 max-w-full object-contain filter grayscale transition-all duration-300 group-hover:filter-none opacity-100"
-                      onError={(e) => {
-                        e.currentTarget.style.display = 'none';
-                        e.currentTarget.nextElementSibling?.classList.remove('hidden');
-                        e.currentTarget.nextElementSibling?.classList.add('flex');
-                      }}
-                    />
-                    <span className="hidden h-full w-full items-center justify-center text-center text-sm font-bold text-primary">{company.name}</span>
-                  </div>
-                ))}
+              <div className="relative w-full overflow-hidden">
+                <LogoLoop
+                  logos={companies.map(company => ({
+                    src: company.logo,
+                    alt: company.name,
+                    title: company.name
+                  }))}
+                  direction="left"
+                  speed={80}
+                  logoHeight={64}
+                  gap={48}
+                  pauseOnHover
+                />
               </div>
 
               <div className="mt-8 flex justify-center">

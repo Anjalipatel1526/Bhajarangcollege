@@ -25,11 +25,6 @@ const AboutSection = () => {
                 className="h-full w-full object-cover"
               />
             </div>
-            {/* Floating Card */}
-            <div className="absolute -bottom-6 -right-6 rounded-xl bg-accent p-6 text-accent-foreground shadow-lg md:-bottom-8 md:-right-8">
-              <div className="text-3xl font-bold md:text-4xl">25+</div>
-              <div className="text-sm">Years of Excellence</div>
-            </div>
           </div>
 
           {/* Content Side */}
