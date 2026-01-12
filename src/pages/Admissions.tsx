@@ -209,7 +209,7 @@ const Admissions = () => {
           <div className="max-w-4xl mx-auto">
             <Card className="shadow-2xl overflow-hidden border-0">
               <div className="grid md:grid-cols-5 bg-white">
-                <div className="md:col-span-2 bg-gradient-to-br from-primary to-primary/80 text-white p-8 flex flex-col justify-between">
+                <div className="md:col-span-2 bg-primary text-white p-8 flex flex-col justify-between">
                   <div>
                     <h3 className="text-2xl font-bold mb-4">Start Your Application</h3>
                     <p className="opacity-90 mb-6">Take the first step towards a brilliant career. Fill out the form and our team will get back to you.</p>
