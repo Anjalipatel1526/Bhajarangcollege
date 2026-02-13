@@ -27,7 +27,7 @@ const Header = () => {
   const location = useLocation();
 
   return (
-    <header className="absolute top-0 z-50 w-full bg-transparent border-none shadow-none">
+    <header className="absolute top-0 z-50 w-full bg-black/20 backdrop-blur-md border-b border-white/10 shadow-sm">
       {/* Main Navigation */}
       <div className="container-custom">
         <div className="flex h-16 items-center justify-between lg:h-20">
@@ -134,8 +134,8 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="border-t border-primary-foreground/10 py-4 lg:hidden animate-in slide-in-from-top-2">
-            <nav className="flex flex-col gap-2">
+          <div className="border-t border-primary-foreground/10 py-4 lg:hidden animate-in slide-in-from-top-2 bg-black/40 backdrop-blur-md rounded-b-lg shadow-lg">
+            <nav className="flex flex-col gap-2 p-2">
               {navItems.map((item) => (
                 <Link
                   key={item.path}
