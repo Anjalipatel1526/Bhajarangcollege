@@ -232,16 +232,9 @@ const Admissions = () => {
                     Click the button below to open the official application form for the academic session 2026-27.
                   </p>
 
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <Button size="lg" className="w-full md:w-auto text-lg py-6 px-10 bg-primary hover:bg-primary/90">
-                        Start Application
-                      </Button>
-                    </DialogTrigger>
-                    <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-                      <ApplicationForm onSuccess={() => { }} />
-                    </DialogContent>
-                  </Dialog>
+                  <Button asChild size="lg" className="w-full md:w-auto text-lg py-6 px-10 bg-primary hover:bg-primary/90">
+                    <Link to="/admissions-gateway">Start Application</Link>
+                  </Button>
 
                   <p className="text-xs text-muted-foreground mt-6">
                     Application fee details will be sent to your registered email after submission.

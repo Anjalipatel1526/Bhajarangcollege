@@ -36,7 +36,7 @@ const HeroSection = () => {
             size="lg"
             className="bg-accent text-accent-foreground hover:bg-accent/90"
           >
-            <Link to="/admissions">
+            <Link to="/admissions-gateway">
               Apply Now
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>

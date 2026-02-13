@@ -13,6 +13,7 @@ import NewsEvents from "./pages/NewsEvents";
 import Gallery from "./pages/Gallery";
 import NotFound from "./pages/NotFound";
 import ClickSpark from "./components/ui/ClickSpark";
+import AdmissionsGatewayWrapper from "./pages/AdmissionsGatewayWrapper";
 
 
 import { useRef, useEffect } from "react";
@@ -49,6 +50,7 @@ const AppContent = () => {
             <Route path="/placements" element={<Placements />} />
             <Route path="/news-events" element={<NewsEvents />} />
             <Route path="/gallery" element={<Gallery />} />
+            <Route path="/admissions-gateway/*" element={<AdmissionsGatewayWrapper />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
