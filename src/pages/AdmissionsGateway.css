@@ -55,7 +55,6 @@
     --font-display: 'Playfair Display', serif;
     --font-body: 'Source Sans 3', sans-serif;
 
-    background-color: hsl(var(--background));
     color: hsl(var(--foreground));
     font-family: var(--font-body);
 }
@@ -110,7 +109,7 @@
 
 .glass-card-strong {
     @apply rounded-xl border;
-    background: hsla(0, 0%, 100%, 0.85);
+    background: hsla(0, 0%, 100%, 0.4);
     border-color: hsla(var(--glass-border));
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);

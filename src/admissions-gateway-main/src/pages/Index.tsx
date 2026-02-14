@@ -1,5 +1,5 @@
 import AnimatedBackground from "@gateway/components/AnimatedBackground";
-import StickyHeader from "@gateway/components/StickyHeader";
+
 import WelcomePanel from "@gateway/components/WelcomePanel";
 import ApplicationWizard from "@gateway/components/ApplicationWizard";
 
@@ -7,7 +7,6 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <AnimatedBackground />
-      <StickyHeader />
       <WelcomePanel />
       <ApplicationWizard />
       <footer className="text-center py-6">

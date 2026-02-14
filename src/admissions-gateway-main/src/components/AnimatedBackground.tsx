@@ -1,22 +1,12 @@
-import campusBg1 from "@gateway/assets/campus-bg-1.jpg";
-import campusBg2 from "@gateway/assets/campus-bg-2.jpg";
-import campusBg3 from "@gateway/assets/campus-bg-3.jpg";
-
-const images = [campusBg1, campusBg2, campusBg3];
-
 const AnimatedBackground = () => {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
-      {images.map((img, i) => (
-        <div
-          key={i}
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${img})`,
-            animation: `bgCrossfade${i === 0 ? "" : i + 1} 18s infinite`,
-          }}
-        />
-      ))}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: `url(/images/about-main.jpg)`,
+        }}
+      />
       <div
         className="absolute inset-0"
         style={{
