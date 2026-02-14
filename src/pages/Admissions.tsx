@@ -82,6 +82,8 @@ const Admissions = () => {
               <img
                 src={laboratory}
                 alt="Students in laboratory"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-auto object-cover transform transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-300" />
@@ -132,6 +134,8 @@ const Admissions = () => {
               <img
                 src={library}
                 alt="Students studying"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover min-h-[400px]"
               />
             </div>

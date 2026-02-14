@@ -96,6 +96,8 @@ const Courses = () => (
                 <img
                   src={p.image}
                   alt={p.title}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-0 data-[loaded=true]:opacity-100"
                   onError={(e) => {
                     (e.target as HTMLImageElement).style.display = 'none';
@@ -144,7 +146,7 @@ const Courses = () => (
           <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-lg px-8">
             Apply Online
           </Button>
-          <Button size="lg" variant="outline" className="text-white border-white/20 hover:bg-white/10 hover:text-white font-semibold text-lg px-8">
+          <Button size="lg" variant="outline" className="text-primary border-white/20 hover:bg-white/10 hover:text-white font-semibold text-lg px-8">
             Download Brochure
           </Button>
         </div>

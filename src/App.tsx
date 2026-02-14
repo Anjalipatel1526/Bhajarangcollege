@@ -3,21 +3,23 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import About from "./pages/About";
-import Courses from "./pages/Courses";
-import Admissions from "./pages/Admissions";
-import CampusLife from "./pages/CampusLife";
-import Placements from "./pages/Placements";
-import NewsEvents from "./pages/NewsEvents";
-import Gallery from "./pages/Gallery";
-import NotFound from "./pages/NotFound";
-import ClickSpark from "./components/ui/ClickSpark";
-import AdmissionsGatewayWrapper from "./pages/AdmissionsGatewayWrapper";
-
-
+import { Suspense, lazy } from "react";
 import { useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import PageLoader from "./components/ui/PageLoader";
+import ClickSpark from "./components/ui/ClickSpark";
+
+// Lazy load pages
+const Index = lazy(() => import("./pages/Index"));
+const About = lazy(() => import("./pages/About"));
+const Courses = lazy(() => import("./pages/Courses"));
+const Admissions = lazy(() => import("./pages/Admissions"));
+const CampusLife = lazy(() => import("./pages/CampusLife"));
+const Placements = lazy(() => import("./pages/Placements"));
+const NewsEvents = lazy(() => import("./pages/NewsEvents"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const AdmissionsGatewayWrapper = lazy(() => import("./pages/AdmissionsGatewayWrapper"));
 
 const queryClient = new QueryClient();
 
@@ -41,18 +43,20 @@ const AppContent = () => {
         duration={400}
       >
         <div ref={scrollRef} style={{ height: '100%', overflowY: 'auto' }}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/admissions" element={<Admissions />} />
-            <Route path="/campus-life" element={<CampusLife />} />
-            <Route path="/placements" element={<Placements />} />
-            <Route path="/news-events" element={<NewsEvents />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/admissions-gateway/*" element={<AdmissionsGatewayWrapper />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/admissions" element={<Admissions />} />
+              <Route path="/campus-life" element={<CampusLife />} />
+              <Route path="/placements" element={<Placements />} />
+              <Route path="/news-events" element={<NewsEvents />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/admissions-gateway/*" element={<AdmissionsGatewayWrapper />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </div>
       </ClickSpark>
     </div>
